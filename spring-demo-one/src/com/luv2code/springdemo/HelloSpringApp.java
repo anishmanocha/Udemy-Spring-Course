@@ -11,6 +11,8 @@ public class HelloSpringApp {
 		
 		/*Grabbing the appropriate object/bean from our Spring container (this is the type
 		 of bean that juxtaposes the old complicated java beans)*/
+		
+		//The second argument in the get bean method casts the bean to the Coach interface
 		Coach theCoach= context.getBean("myCoach", Coach.class);
 		
 		//Printing the daily workout that my coach is giving me
