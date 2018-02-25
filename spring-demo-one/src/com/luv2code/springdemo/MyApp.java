@@ -1,5 +1,7 @@
 package com.luv2code.springdemo;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class MyApp {
 
 	public static void main(String[] args) {
@@ -12,9 +14,16 @@ public class MyApp {
 		file.  I believe this is what Chad was saying when he was saying that the creation
 		of our objects is delegated outside the scope of our class*/
 		
-		Coach theCoach= new TrackCoach();
+		ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("applicationContext.xml");
+		
+		Coach theCoach= context.getBean("myCoach", Coach.class);
 		
 		System.out.println(theCoach.getDailyWorkout());
+		
+		System.out.println(theCoach.tellFortune());
+		
+		
+		context.close();
 		
 		
 
