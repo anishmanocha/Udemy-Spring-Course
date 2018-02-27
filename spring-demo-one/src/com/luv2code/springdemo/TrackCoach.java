@@ -16,7 +16,7 @@ public class TrackCoach implements Coach {
 
 	@Override
 	public String tellFortune() {
-		return this.fortuneTellerService.tellFortune();
+		return "Just do it " + this.fortuneTellerService.tellFortune();
 	}
 
 }

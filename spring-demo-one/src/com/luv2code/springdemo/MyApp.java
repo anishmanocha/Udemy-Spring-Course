@@ -16,11 +16,29 @@ public class MyApp {
 		
 		ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("applicationContext.xml");
 		
-		Coach theCoach= context.getBean("myCoach", Coach.class);
+		Coach theCoach= context.getBean("baseballCoach", Coach.class);
 		
 		System.out.println(theCoach.getDailyWorkout());
 		
 		System.out.println(theCoach.tellFortune());
+		
+		theCoach= context.getBean("trackCoach", Coach.class);
+		
+		System.out.println(theCoach.getDailyWorkout());
+		
+		System.out.println(theCoach.tellFortune());
+		
+		TennisCoach tennisCoach= context.getBean("tennisCoach", TennisCoach.class);
+		
+		System.out.println(tennisCoach.getDailyWorkout());
+		
+		System.out.println(tennisCoach.tellFortune());
+		
+		System.out.println(tennisCoach.getName());
+		
+		System.out.println(tennisCoach.getEmailAddress());
+		
+		
 		
 		
 		context.close();
