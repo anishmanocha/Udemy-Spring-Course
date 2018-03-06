@@ -15,7 +15,7 @@ public class BeanScopeDemoApp {
 		
 		if (coach == sameCoach) {
 			
-			System.out.print("This proves that the life span of a bean is by default that of a singleton");
+			System.out.println("This proves that the life span of a bean is by default that of a singleton");
 		}
 		
 		/*If we change the scope to be prototype, aka, every time we grab a coach from the Spring container, it's a different coach,

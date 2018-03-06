@@ -14,8 +14,8 @@
     <constructor-arg ref="happyFortuneTeller"/>
     </bean>
     
-    <bean id= "trackCoach" class= "com.luv2code.springdemo.TrackCoach">
-    <constructor-arg ref="randomFortuneTeller"/>
+    <bean id= "trackCoach" class= "com.luv2code.springdemo.TrackCoach" init-method= "doMyStartupStuff" destroy-method="doMyDestroyStuff">
+    <constructor-arg ref="happyFortuneTeller"/>
     </bean>
     
     <!--<bean id= "tennisCoach" class= "com.luv2code.springdemo.TennisCoach">
@@ -26,8 +26,6 @@
     
     <!-- This is a dependency -->
     <bean id= "happyFortuneTeller" class= "com.luv2code.springdemo.HappyFortuneTeller"></bean>
-    
-    <bean id= "randomFortuneTeller" class= "com.luv2code.springdemo.RandomFortuneService"></bean>
     
     
     
