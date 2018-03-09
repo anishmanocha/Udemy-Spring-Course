@@ -38,6 +38,24 @@ public class MyApp {
 		
 		System.out.println(tennisCoach.getEmailAddress());
 		
+		Coach examplePrototypeCoach= context.getBean("trackCoach", Coach.class);
+		
+		Coach distinctPrototypeCoach=context.getBean("trackCoach", Coach.class);
+		
+		System.out.println("The first coach is in memory at " + examplePrototypeCoach);
+		
+		System.out.println("The second coach is in memory at " + distinctPrototypeCoach);
+		
+		if (examplePrototypeCoach == distinctPrototypeCoach) {
+			
+			System.out.println("We are pointing to the same object in memory");
+		}
+		
+		else {
+			
+			System.out.println("We are pointing to different objects in memory");
+		}
+		
 		
 		
 		
