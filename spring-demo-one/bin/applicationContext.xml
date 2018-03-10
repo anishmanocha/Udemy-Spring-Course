@@ -7,25 +7,9 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
     
-    <context:property-placeholder location= "sports.properties"></context:property-placeholder>
-
-    <!-- Injecting dependency into constructor via constructor-arg tag -->
-    <bean id= "baseballCoach" class= "com.luv2code.springdemo.BaseballCoach">
-    <constructor-arg ref="happyFortuneTeller"/>
-    </bean>
-    
-    <bean id= "trackCoach" class= "com.luv2code.springdemo.TrackCoach" scope="prototype">
-    <constructor-arg ref="happyFortuneTeller"/>
-    </bean>
-    
-    <bean id= "tennisCoach" class= "com.luv2code.springdemo.TennisCoach">
-    		<property name= "fortuneTellerService" ref= "happyFortuneTeller"></property>
-    		  <property name= "emailAddress" value= "${foo.emailAddress}"></property>
-    		<property name= "name" value= "${foo.name}"></property>
-    </bean>
-    
-    <!-- This is a dependency -->
-    <bean id= "happyFortuneTeller" class= "com.luv2code.springdemo.HappyFortuneTeller"></bean>
+    <!-- We're adding a marker here, which will tell Spring to search the package listed below and create/manage
+    objects with the appropriate annotations within the package below -->
+    <context:component-scan base-package="com.luv2code.springdemo2" />
     
     
     
