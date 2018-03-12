@@ -1,27 +1,21 @@
 package com.luv2code.springdemo2;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach{
 	
-	
+	@Autowired
+	@Qualifier("randomFortuneService")
 	FortuneService fortuneService;
 	
-	
-	/*Remember at the beginning of run time, Spring creates a TennisCoach object in the background, which is 
-	why sysoute gets called, managing FortuneService dependencies via setter injection*/
 	public TennisCoach() {
 		
 		System.out.println("Inside the default constructor for a Tennis Coach");
 	}
 	
-	/*@Autowired
-	public TennisCoach(FortuneService fortuneService) {
-		
-		this.fortuneService=fortuneService;
-	}*/
 	
 	@Override
 	public String getDailyWorkout() {
@@ -36,7 +30,7 @@ public class TennisCoach implements Coach{
 		return this.fortuneService.giveFortune();
 	}
 	
-	@Autowired
+	
 	public void setFortuneService(FortuneService fortuneService) {
 		this.fortuneService= fortuneService;
 	}

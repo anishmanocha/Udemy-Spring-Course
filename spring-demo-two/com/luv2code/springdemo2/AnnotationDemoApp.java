@@ -13,15 +13,9 @@ public class AnnotationDemoApp {
 		
 		System.out.println(tennisCoach.getDailyWorkout());
 		
-		Coach trackCoach=context.getBean("trackCoach", Coach.class);
+		System.out.println(tennisCoach.giveFortune());
 		
-		System.out.println(trackCoach.getDailyWorkout());
 		
-		TennisCoach otherTennisCoach=context.getBean("tennisCoach", TennisCoach.class);
-		
-		System.out.println(otherTennisCoach.getFortuneService().giveFortune());
-		
-		System.out.println(otherTennisCoach.giveFortune());
 
 	}
 

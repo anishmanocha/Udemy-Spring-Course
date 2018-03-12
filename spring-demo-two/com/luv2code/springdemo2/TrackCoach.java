@@ -1,17 +1,19 @@
 package com.luv2code.springdemo2;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TrackCoach implements Coach {
 	
+	@Autowired
+	@Qualifier("happyFortuneService")
 	FortuneService fortuneService;
 	
-	@Autowired
-	public TrackCoach(FortuneService fortuneService) {
+	public TrackCoach() {
 		
-		this.fortuneService= fortuneService;
+		
 	}
 
 	@Override
