@@ -11,6 +11,8 @@
     objects with the appropriate annotations within the package below -->
     <context:component-scan base-package="com.luv2code.springdemo2" />
     
+    <context:property-placeholder location="classpath:fortune.properties"/>
+    
     
     
 </beans>
