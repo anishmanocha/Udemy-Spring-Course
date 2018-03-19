@@ -18,7 +18,7 @@ public class PracticeActivityFortuneService implements FortuneService {
 
 	@Override
 	public String giveFortune() {
-		int randomNumber= (int) (Math.random() *3);
+		int randomNumber= (int) (Math.random() *2);
 		
 		if(randomNumber <1) {
 			return listOfFortunes[0];
@@ -26,7 +26,7 @@ public class PracticeActivityFortuneService implements FortuneService {
 		
 		else if (randomNumber >= 1) {
 			
-			return listOfFortunes[1];
+			return listOfFortunes[0];
 		}
 		
 		else {
